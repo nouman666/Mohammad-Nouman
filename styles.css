@@ -68,8 +68,8 @@ body {
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(91, 140, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91, 140, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(91, 140, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 140, 255, 0.018) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
   pointer-events: none;
@@ -79,7 +79,7 @@ body {
   position: fixed;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.35;
+  opacity: 0.22;
   pointer-events: none;
   z-index: 0;
 }
@@ -305,14 +305,31 @@ main {
 }
 
 .hero__subtitle {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1rem;
   color: var(--text-muted);
   font-size: 1.1rem;
-  max-width: 36ch;
+  max-width: 42ch;
+}
+
+.hero__focus {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 40ch;
+}
+
+.hero__focus strong {
+  color: var(--text);
 }
 
 @media (max-width: 900px) {
   .hero__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__focus {
     margin-left: auto;
     margin-right: auto;
   }
@@ -364,6 +381,17 @@ main {
 .btn--ghost:hover {
   background: var(--accent-soft);
   border-color: var(--accent);
+}
+
+.btn--whatsapp {
+  background: transparent;
+  color: #e8fff0;
+  border: 1px solid rgba(37, 211, 102, 0.55);
+}
+
+.btn--whatsapp:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: var(--whatsapp);
 }
 
 .hero__stats {
@@ -470,6 +498,27 @@ main {
   font-size: 1.05rem;
 }
 
+.section__meta {
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
+}
+
+.section__meta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.section__meta a:hover {
+  text-decoration: underline;
+}
+
+.section__note {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -494,6 +543,17 @@ main {
 }
 
 .about__card strong {
+  color: var(--text);
+}
+
+.about__card--story {
+  margin-top: 1.25rem;
+}
+
+.about__story-title {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text);
 }
 
@@ -710,9 +770,34 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+@media (min-width: 900px) {
+  .projects__grid--featured .project-card--featured {
+    grid-column: 1 / -1;
+  }
+}
+
 .project-card {
   position: relative;
   overflow: hidden;
+}
+
+.project-card--featured {
+  border-color: var(--border-strong);
+  padding-top: 1.75rem;
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
 }
 
 .project-card::after {
@@ -726,24 +811,51 @@ main {
   pointer-events: none;
 }
 
-.project-card__icon {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-  opacity: 0.9;
+.project-card__marker {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-bottom: 0.85rem;
+  opacity: 0.75;
 }
 
 .project-card__title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.25rem;
   font-size: 1.35rem;
   font-weight: 700;
   font-family: var(--font-display);
 }
 
-.project-card__desc {
-  margin: 0;
+.project-card__tagline {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--text-muted);
-  font-size: 0.95rem;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.project-card__body p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.project-card__k {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
 }
 
 /* Education */
