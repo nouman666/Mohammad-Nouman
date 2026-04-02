@@ -1,0 +1,20 @@
+---
+pid: 70008
+cwd: "C:\\Users\\as"
+command: "cd \"C:\\Users\\as\\.cursor\\projects\\C-Users-as-AppData-Local-Temp-bead6d17-4497-469c-8402-0b8efb5d8e16\" && python -m http.server 8765"
+started_at: 2026-04-02T18:06:55.737Z
+running_for_ms: 15       
+---
+At C:\Users\as\AppData\Local\Temp\ps-script-6b31f7d3-0503-4004-8945-c899309f5f97.ps1:84 char:102
++ ... s-AppData-Local-Temp-bead6d17-4497-469c-8402-0b8efb5d8e16" && python  ...
++                                                                ~~
+The token '&&' is not a valid statement separator in this version.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+ 
+
+---
+exit_code: 1
+elapsed_ms: 695
+ended_at: 2026-04-02T18:06:56.432Z
+---
